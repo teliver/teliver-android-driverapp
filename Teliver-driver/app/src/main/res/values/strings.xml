@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Teliver-Driver</string>
+    <string name="txtStartTrip">Start Trip</string>
+    <string name="txtStoptrip">Stop Trip</string>
+    <string name="txtEventPush">Send Event Push</string>
+    <string name="txtTrackingId">Enter your Tracking Id</string>
+    <string name="txtDeliverTo">Deliver to</string>
+    <string name="txtMessage">Message</string>
+    <string name="txtErrorTrackingId">Please Enter TrackingId</string>
+    <string name="txtErrorUserName">Please provide the username to send push message</string>
+    <string name="txtErrorMessageEmpty">Enter the message to send</string>
+    <string name="txtTeliverKey">26e02a2b19459214d58a89067ca5b26e</string>
+    <string name="txtName">Name</string>
+    <string name="name">Selvakumar.P</string>
+    <string name="txtMobileNumber">Mobile Number</string>
+    <string name="txtMobile">9488585651</string>
+    <string name="txtPlace">No:9, 2nd floor Venkateshwara Nagar, Adyar, Chennai-600020</string>
+    <string name="txtPaid">Card Payment</string>
+    <string name="orderId">164752266</string>
+    <string name="txtPayment">Payment Mode</string>
+
+
+</resources>
