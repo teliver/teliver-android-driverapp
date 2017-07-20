@@ -6,17 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 
     <style name="BtnTracking">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/colorHint</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="android:padding">15dp</item>
-           </style>
-
+        <item name="android:background">@color/colorGreen</item>
+    </style>
 
 
     <style name="txtInputDialog">
@@ -27,7 +28,6 @@
     </style>
 
 
-
     <style name="edtTextDialog">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -36,6 +36,7 @@
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">4dp</item>
         <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 

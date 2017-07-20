@@ -12,8 +12,6 @@ import com.teliver.sdk.core.Teliver;
 
 public class Application extends MultiDexApplication {
 
-    public static final String TRACKING_ID = "tracking_id";
-
     private SharedPreferences sharedPreferences;
 
     private SharedPreferences.Editor editor;
@@ -22,7 +20,7 @@ public class Application extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Teliver.init(this, getString(R.string.txtTeliverKey));
+        Teliver.init(this, "your_teliver_key");
         sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.apply();
@@ -45,6 +43,11 @@ public class Application extends MultiDexApplication {
 
     public String getStringInPref(String key) {
         return sharedPreferences.getString(key, null);
+    }
+
+    public void deletePreference(){
+        editor.clear();
+        editor.commit();
     }
 
 

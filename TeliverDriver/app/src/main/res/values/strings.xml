@@ -9,7 +9,6 @@
     <string name="txtErrorTrackingId">Please Enter TrackingId</string>
     <string name="txtErrorUserName">Please provide the username to send push message</string>
     <string name="txtErrorMessageEmpty">Enter the message to send</string>
-    <string name="txtTeliverKey">26e02a2b19459214d58a89067ca5b26e</string>
     <string name="txtName">Name</string>
     <string name="name">Selvakumar.P</string>
     <string name="txtMobileNumber">Mobile Number</string>
@@ -19,5 +18,7 @@
     <string name="orderId">164752266</string>
     <string name="txtPayment">Payment Mode</string>
 
+    <string name="txtTrips">TRIPS</string>
+    <string name="txtPush">EVENT PUSH</string>
 
 </resources>
