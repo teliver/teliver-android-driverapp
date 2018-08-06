@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +35,11 @@ public class FragmentPush extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         application = (Application) getActivity().getApplicationContext();
-        edtUserName = (EditText) view.findViewById(R.id.edtUserName);
-        edtPushMessage = (EditText) view.findViewById(R.id.edtPushMessage);
-        layoutUsername = (TextInputLayout) view.findViewById(R.id.layoutUserName);
-        layoutPushMessage = (TextInputLayout) view.findViewById(R.id.layoutPushMessage);
-        btnSendPush = (Button) view.findViewById(R.id.btnEventPush);
+        edtUserName = view.findViewById(R.id.edtUserName);
+        edtPushMessage = view.findViewById(R.id.edtPushMessage);
+        layoutUsername = view.findViewById(R.id.layoutUserName);
+        layoutPushMessage = view.findViewById(R.id.layoutPushMessage);
+        btnSendPush = view.findViewById(R.id.btnEventPush);
 
         btnSendPush.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +50,6 @@ public class FragmentPush extends Fragment {
                 if (pushMessage.isEmpty())
                     layoutPushMessage.setError(getString(R.string.txtErrorMessageEmpty));
                 else {
-                    Log.d("TELIVER::", "onClick: " + " Event Push Sended");
                     String username = application.getStringInPref("userName");
                     String[] multipleId = username.split(",");
                     PushData pushData = new PushData(multipleId);

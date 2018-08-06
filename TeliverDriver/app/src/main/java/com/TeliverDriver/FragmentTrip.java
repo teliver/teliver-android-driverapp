@@ -5,7 +5,6 @@ import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,13 +51,13 @@ public class FragmentTrip extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         application = (Application) getActivity().getApplicationContext();
-        edtTrackingId = (EditText) view.findViewById(R.id.edtTrackingId);
-        edtUserName = (EditText) view.findViewById(R.id.edtUserName);
-        edtPushMessage = (EditText) view.findViewById(R.id.edtPushMessage);
-        layoutTrackingId = (TextInputLayout) view.findViewById(R.id.layoutTrackingId);
-        layoutUsername = (TextInputLayout) view.findViewById(R.id.layoutUserName);
-        layoutPushMessage = (TextInputLayout) view.findViewById(R.id.layoutPushMessage);
-        btnStartTrip = (Button) view.findViewById(R.id.btnStartTrip);
+        edtTrackingId = view.findViewById(R.id.edtTrackingId);
+        edtUserName = view.findViewById(R.id.edtUserName);
+        edtPushMessage = view.findViewById(R.id.edtPushMessage);
+        layoutTrackingId = view.findViewById(R.id.layoutTrackingId);
+        layoutUsername = view.findViewById(R.id.layoutUserName);
+        layoutPushMessage = view.findViewById(R.id.layoutPushMessage);
+        btnStartTrip = view.findViewById(R.id.btnStartTrip);
 
         btnStartTrip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,8 +77,6 @@ public class FragmentTrip extends Fragment {
 
                         @Override
                         public void onLocationUpdate(Location location) {
-                            Log.d("TELIVER::", "onLocationUpdate: LATITUDE == " + location.getLatitude()
-                                    + "LONGITUDE == " + location.getLongitude());
                         }
 
                         @Override
@@ -88,7 +85,6 @@ public class FragmentTrip extends Fragment {
                             edtTrackingId.setText("");
                             application.storeBooleanInPref(Constants.IN_CURRENT_TRIP, false);
                             application.deletePreference();
-                            Log.d(Constants.TAG, "onTripEnded:  ON TRIP ENDED");
                             if (tripState != null)
                                 tripState.tripStopped();
                             layoutUsername.setVisibility(View.VISIBLE);
@@ -107,7 +103,6 @@ public class FragmentTrip extends Fragment {
                     String username = edtUserName.getText().toString().trim();
                     application.storeStringInPref("userName", username);
                     String[] multipleId = username.split(",");
-                    Log.d(Constants.TAG, "LENGTH OF USERS ===  " + multipleId.length);
                     String pushMessage = edtPushMessage.getText().toString().trim();
 
                     if (trackingId.isEmpty())
@@ -125,7 +120,6 @@ public class FragmentTrip extends Fragment {
                         Teliver.setTripListener(new TripListener() {
                             @Override
                             public void onTripStarted(Trip tripDetails) {
-                                Log.d(Constants.TAG, "onTripStarted: " + tripDetails);
                                 application.storeBooleanInPref(Constants.IN_CURRENT_TRIP, true);
                                 btnStartTrip.setText(getString(R.string.txtStoptrip));
                                 edtPushMessage.setText(" ");
@@ -138,8 +132,7 @@ public class FragmentTrip extends Fragment {
 
                             @Override
                             public void onLocationUpdate(Location location) {
-                                Log.d("TELIVER::", "onTrip started ==  latitude ==" + location.getLatitude() +
-                                        "longitude == " + location.getLongitude());
+
                             }
 
                             @Override
