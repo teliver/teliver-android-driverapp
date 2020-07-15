@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutTrackingId"
         style="@style/txtInputDialog">
 
@@ -14,10 +14,10 @@
 
         <View style="@style/ViewLine" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutUserName"
         style="@style/txtInputDialog">
 
@@ -34,10 +34,10 @@
             style="@style/ViewLine" />
 
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutPushMessage"
         style="@style/txtInputDialog">
 
@@ -50,7 +50,7 @@
         <View style="@style/ViewLine" />
 
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <RelativeLayout
